@@ -1,0 +1,29 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.container{   
+  display: flex;
+  flex-direction: row;  
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;  
+}
+.card{
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 20px;
+  width: 20%;
+  height: 30%;
+  text-align: center;
+}
+.card img{
+  width: 100px;
+  height: 100px;
+}
+
+.card h3{
+  margin-top: 10px;
+}
