@@ -13,7 +13,7 @@ import styles from "./Countries.module.css";
       const result = await response.json();     
       setData(result);     
     } catch (error) {
-      console.error("Error fetching data:" + error);
+      console.error("Error fetching data:", error.message);
     }
   }
   useEffect(()=>{    
