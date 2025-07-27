@@ -10,13 +10,10 @@ import styles from "./Countries.module.css";
       if(!response.ok){
         throw new Error("HTTP error! Status: "+ response.status);
       }
-      const result = await response.json();
-      // const fnlres = await JSON.stringify(result);
-      //console.log("result in fetchData" + result);
-      setData(result);
-     // console.log("usestate data" + data);
+      const result = await response.json();     
+      setData(result);     
     } catch (error) {
-      console.error("error in fetchData method"+error);
+      console.error("Error fetching data: " + error);
     }
   }
   useEffect(()=>{    
