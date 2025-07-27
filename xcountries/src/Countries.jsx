@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import styles from "./Countries.module.css";
-const Countries = () => {
+  const Countries = () => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
     var backendPoint = "https://xcountries-backend.azurewebsites.net/all";
@@ -12,25 +12,23 @@ const Countries = () => {
       }
       const result = await response.json();
       // const fnlres = await JSON.stringify(result);
-      console.log("result in fetchData" + result);
+      //console.log("result in fetchData" + result);
       setData(result);
      // console.log("usestate data" + data);
     } catch (error) {
       console.error("error in fetchData method"+error);
     }
   }
-  useEffect(()=>{
-    
+  useEffect(()=>{    
     fetchData(); }, []);
 
-  
     return <>
     <div className={styles.container}>
     {data.length>0?(data.map((country)=>( 
       <div className={styles.card}>
         <div><img src={country.flag} alt={country.abbr} /></div>
         <div><h3>{country.name}</h3></div>
-      </div>     
+      </div>  
    
     ))):("something wrong")
     
