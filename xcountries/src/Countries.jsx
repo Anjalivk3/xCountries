@@ -4,13 +4,13 @@ import styles from "./Countries.module.css";
   const Countries = () => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
-    var backendPoint = "https://xcountries-backend.azurewebsites.net/all";
+    var backendPoint = "http://xcountries-backend.azurewebsites.net/all";
     try {
       const response = await fetch(backendPoint);      
       const result = await response.json();     
       setData(result);     
     } 
-    catch (error) {
+    catch(error) {
       console.error("Error fetching data:", error);      
     }
   }
