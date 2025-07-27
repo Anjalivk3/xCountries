@@ -6,14 +6,12 @@ import styles from "./Countries.module.css";
   const fetchData = async () => {
     var backendPoint = "https://xcountries-backend.azurewebsites.net/all";
     try {
-      const response = await fetch(backendPoint)
-      if(!response.ok){
-        throw new Error("Error fetching data:"+ response.error);
-      }
+      const response = await fetch(backendPoint);      
       const result = await response.json();     
       setData(result);     
-    } catch (error) {
-      console.error("Error fetching data:", error.message);
+    } 
+    catch (error) {
+      console.error("Error fetching data:", error);      
     }
   }
   useEffect(()=>{    
