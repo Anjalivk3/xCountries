@@ -8,12 +8,12 @@ import styles from "./Countries.module.css";
     try {
       const response = await fetch(backendPoint)
       if(!response.ok){
-        throw new Error("HTTP error! Status: "+ response.status);
+        throw new Error("Error fetching data:"+ response.error);
       }
       const result = await response.json();     
       setData(result);     
     } catch (error) {
-      console.error("Error fetching data: " + error);
+      console.error("Error fetching data:" + error);
     }
   }
   useEffect(()=>{    
