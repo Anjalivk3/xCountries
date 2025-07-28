@@ -4,7 +4,7 @@ import styles from "./Countries.module.css";
   const Countries = () => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
-    var backendPoint = "http://xcountries-backend.azurewebsites.net/all";
+    var backendPoint = "https://xcountries-backend.azurewebsites.net/all";
     try {
         const response = await fetch(backendPoint);
         if (!response.ok) {
