@@ -4,19 +4,15 @@ import styles from "./Countries.module.css";
   const Countries = () => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
-    var backendPoint = "https://xcountries-backend.azurewebsites.net/all";
+   
     try {
-        const response = await fetch(backendPoint);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        const response = await fetch("https://xcountries-backend.azurewebsites.net/all");
+        
         const result = await response.json();
         setData(result);
-      } catch (err) {
-        console.error("Error fetching data: catch block", err);
-      } finally {
-        console.log("Finally Block");
-      }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } 
   }
   useEffect(()=>{    
     fetchData(); }, []);
