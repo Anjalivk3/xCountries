@@ -6,7 +6,7 @@ import styles from "./Countries.module.css";
   const fetchData = async () => {
    
     try {
-        const response = await fetch("https://xcountries-backend.azurewebsites.net/all");
+        const response = await fetch("https://xcountries-backend.labs.crio.do/all");
         
         const result = await response.json();
         setData(result);
